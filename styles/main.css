@@ -1531,12 +1531,12 @@
 
 @media (max-width: 760px) {
   :root {
-    --container: calc(100% - 2rem);
+    --container: calc(100% - 1.5rem);
   }
 
   .site-header {
     gap: .55rem;
-    padding: 0 1rem;
+    padding: 0 .75rem;
   }
 
   .site-header .brand {
@@ -1554,8 +1554,8 @@
   }
 
   .site-header > .theme-toggle {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
   }
 
   .mobile-menu {
@@ -1578,23 +1578,31 @@
   }
 
   .mobile-menu nav {
+    width: min(100% - 2rem, 360px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.15rem;
   }
 
   .mobile-menu nav a:not(.button) {
     font-family: var(--serif);
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    line-height: 1;
+    padding: .35rem;
   }
 
   .hero {
-    min-height: 680px;
+    min-height: 100svh;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
   }
 
   .hero-title {
-    font-size: clamp(3.4rem, 15vw, 5rem);
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    line-height: 1.02;
   }
 
   .hero-subtitle {
@@ -1611,7 +1619,7 @@
   .story-grid,
   .location-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .intro-copy {
@@ -1619,11 +1627,30 @@
   }
 
   .intro-media {
-    padding-left: 1.2rem;
+    padding-left: 0;
   }
 
   .image-caption {
     left: 1rem;
+    right: 1rem;
+    max-width: calc(100% - 2rem);
+    padding: .8rem 1rem;
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .display,
+  .editorial-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: .98;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .section-head {
@@ -1634,15 +1661,12 @@
   .dish-grid {
     width: 100vw;
     gap: .9rem;
-    padding-right: 1.5rem;
+    padding: .4rem .75rem 1rem;
   }
 
   .dish-card {
-    flex-basis: 78vw;
-  }
-
-  .dish-card {
-    min-height: 400px;
+    flex-basis: min(82vw, 330px);
+    min-height: 390px;
   }
 
   .dish-card:hover {
@@ -1654,7 +1678,7 @@
   }
 
   .journey-image {
-    min-height: 460px;
+    min-height: min(110vw, 440px);
   }
 
   .journey-label {
@@ -1667,7 +1691,7 @@
   }
 
   .space-image {
-    height: 600px;
+    height: min(125vw, 520px);
   }
 
   .space-details {
@@ -1681,7 +1705,11 @@
   }
 
   .detail-copy {
-    padding: 1rem 0;
+    padding: 0;
+  }
+
+  .detail-copy p {
+    font-size: 1rem;
   }
 
   .story-copy {
@@ -1695,6 +1723,34 @@
 
   .testimonial-card.testimonial-feature {
     transform: none;
+  }
+
+  .testimonial-card,
+  .testimonial-card.testimonial-feature {
+    min-height: 0;
+    padding: 1.5rem;
+  }
+
+  .testimonial-card blockquote {
+    margin: 1.25rem 0 1.5rem;
+    font-size: 1rem;
+  }
+
+  .reserve {
+    padding: 4rem 1rem;
+  }
+
+  .reserve .display {
+    font-size: clamp(3.5rem, 18vw, 6rem);
+  }
+
+  .reserve p {
+    margin: 1rem auto 1.5rem;
+    font-size: .95rem;
+  }
+
+  .reserve .button {
+    min-height: 52px;
   }
 
   .gallery-grid {
@@ -1716,6 +1772,7 @@
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
   }
 
   .footer-grid .brand {
@@ -1734,6 +1791,7 @@
   .location-actions {
     align-items: flex-start;
     flex-direction: column;
+    gap: 1rem;
   }
 
   .reservation-hero {
