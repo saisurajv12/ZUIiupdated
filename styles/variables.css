@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Hoshiko Satsuki";
+  src: url("../assets/fonts/Hoshiko Satsuki.woff2") format("woff2"),
+       url("../assets/fonts/Hoshiko Satsuki.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --bg: #090808;
+  --bg-strong: #150b0e;
+  --surface: #110e0f;
+  --surface-strong: #1b0d11;
+  --panel: rgba(255, 255, 255, 0.06);
+  --ink: #f7e9e7;
+  --ink-soft: #d1bfc0;
+  --muted: #a08d90;
+  --line: rgba(255, 111, 111, 0.22);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --accent: #b3132b;
+  --accent-soft: rgba(179, 19, 43, 0.2);
+  --highlight: #ff5a4f;
+  --success: #8bc5a0;
+  --warning: #e63946;
+  --header-height: 92px;
+  --container: min(1200px, calc(100% - 2.4rem));
+  --radius: 28px;
+  --radius-sm: 16px;
+  --serif: "Hoshiko Satsuki", "Cormorant Garamond", Georgia, serif;
+  --display-font: "Hoshiko Satsuki", "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", "Segoe UI", sans-serif;
+  --transition: 220ms ease;
+}
+
+[data-theme="light"] {
+  --bg: #f7f1ee;
+  --bg-strong: #efe1e1;
+  --surface: #fffaf8;
+  --surface-strong: #f4e7e7;
+  --panel: rgba(255, 255, 255, 0.72);
+  --ink: #1b1012;
+  --ink-soft: #553f42;
+  --muted: #806c70;
+  --line: rgba(111, 24, 36, 0.18);
+  --shadow: 0 24px 60px rgba(77, 23, 29, 0.14);
+  --accent: #a91029;
+  --accent-soft: rgba(169, 16, 41, 0.1);
+  --highlight: #c52335;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(255, 90, 79, 0.12), transparent 26%), var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -18% -10% auto auto;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 79, 0.16), rgba(255, 90, 79, 0));
+  pointer-events: none;
+  filter: blur(30px);
+  z-index: 0;
+  animation: floatGlow 18s ease-in-out infinite alternate;
+}
+
+main,
+footer,
+header {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4.5rem, 8vw, 8rem) 0;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 1rem 5% auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 79, 0.7), transparent);
+  opacity: 0.8;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.section-head h2 {
+  margin: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  transition: color var(--transition), text-shadow var(--transition), transform var(--transition);
+}
+
+.eyebrow:hover {
+  color: var(--highlight);
+  text-shadow: 0 0 16px rgba(255, 90, 79, 0.35);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

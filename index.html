@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ZUII — contemporary Pan-Asian dining, made to be remembered.">
+  <title>ZUII — Pan-Asian Dining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/typography.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#top" aria-label="ZUII home">ZUII<span>—</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#experience">Experience</a>
+      <a href="#signatures">Signatures</a>
+      <a href="pages/menu.html">Menu</a>
+      <a href="#space">The Space</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="button button-small header-cta" href="pages/reservations.html">Reserve a table</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span></button>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="#experience">Experience</a>
+      <a href="pages/menu.html">Menu</a>
+      <a href="#signatures">Signatures</a>
+      <a href="#space">The Space</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+      <a class="button" href="#reserve">Reserve a table</a>
+      <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span> <span class="theme-toggle-label">Light theme</span></button>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=85" alt="Atmospheric Pan-Asian dishes on a dark table">
+      <div class="hero-overlay"></div>
+      <canvas class="steam-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-copy">
+        <span class="eyebrow">Pan-Asian dining</span>
+        <h1 class="hero-title">An exploration<br>of Asia, <em>served</em><br>your way.</h1>
+        <p class="hero-subtitle">Flavours without borders. Moments worth lingering over.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#reserve">Reserve a table <span>↗</span></a>
+          <a class="text-link text-link-light" href="#signatures">Explore menu <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll to discover <span>↓</span></div>
+    </section>
+
+    <section class="section intro" id="experience">
+      <div class="container intro-grid">
+        <div class="intro-copy reveal">
+          <span class="eyebrow">The ZUII experience</span>
+          <h2 class="display">Flavours<br><em>without</em><br>borders.</h2>
+          <p class="lead">A contemporary expression of Asia, brought together through bold plates, thoughtful cocktails and a room designed for the art of gathering.</p>
+          <a class="text-link" href="#story">Discover ZUII <span>↗</span></a>
+        </div>
+        <div class="intro-media reveal">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85" alt="Warm modern restaurant interior">
+          <span class="image-caption">A place to arrive hungry<br>and leave inspired.</span>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll to discover <span>↓</span></div>
+    </section>
+
+    <section class="section signatures" id="signatures">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">From the kitchen</span><h2 class="editorial-title">Signatures</h2></div>
+          <p class="section-note">Made to be remembered.</p>
+        </div>
+        <div class="dish-rail">
+          <div class="dish-grid" id="signature-dishes">
+          <article class="dish-card dish-feature reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">citrus</span>
+              <span class="dish-badge dish-badge-alt">chilli</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85" alt="Colourful Asian noodle dish">
+            <div class="dish-meta"><span>ZUII signature</span><h3>Charred noodles<br>with citrus & heat</h3><p>Layered, bright, unapologetically generous.</p></div>
+          </article>
+          <article class="dish-card reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">ponzu</span>
+              <span class="dish-badge dish-badge-alt">yuzu</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1000&q=85" alt="Sushi and sashimi plate">
+            <div class="dish-meta"><span>Raw bar</span><h3>Seasonal sashimi</h3><p>Clean lines. Deep flavour.</p></div>
+          </article>
+          <article class="dish-card reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">sesame</span>
+              <span class="dish-badge dish-badge-alt">ginger</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1000&q=85" alt="Steamed dumplings">
+            <div class="dish-meta"><span>Small plates</span><h3>Hand-folded dumplings</h3><p>Made slowly, shared freely.</p></div>
+          </article>
+          <article class="dish-card reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">smoky</span>
+              <span class="dish-badge dish-badge-alt">herbs</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=85" alt="Asian wok dish with vegetables">
+            <div class="dish-meta"><span>Wok</span><h3>Silk road wok greens</h3><p>Fragrant, smoky and finished with sesame.</p></div>
+          </article>
+          <article class="dish-card reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">coconut</span>
+              <span class="dish-badge dish-badge-alt">lime</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1000&q=85" alt="Colourful Vietnamese-inspired dish">
+            <div class="dish-meta"><span>Seasonal</span><h3>Market garden curry</h3><p>Coconut, herbs and a little bright heat.</p></div>
+          </article>
+          <article class="dish-card reveal">
+            <div class="dish-badges" aria-label="flavour notes">
+              <span class="dish-badge">charred</span>
+              <span class="dish-badge dish-badge-alt">bao</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=85" alt="Asian bao buns">
+            <div class="dish-meta"><span>From the grill</span><h3>Glazed bao buns</h3><p>Soft, sticky, savoury and made to share.</p></div>
+          </article>
+          </div>
+        </div>
+        <a class="text-link centered-link" href="pages/menu.html">View full menu <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="journey section">
+      <div class="container journey-grid">
+        <div class="journey-copy reveal">
+          <span class="eyebrow">The cuisine journey</span>
+          <h2 class="editorial-title">Many places.<br><em>One table.</em></h2>
+          <p>Our menu travels through the markets, coastlines and late-night kitchens of Asia — interpreted with a modern ZUII point of view.</p>
+          <div class="journey-tabs" role="tablist" aria-label="Cuisine influences">
+            <button class="active" type="button" data-cuisine="Japan">Japan</button>
+            <button type="button" data-cuisine="Thailand">Thailand</button>
+            <button type="button" data-cuisine="Vietnam">Vietnam</button>
+            <button type="button" data-cuisine="Korea">Korea</button>
+          </div>
+        </div>
+        <div class="journey-image reveal">
+          <img id="cuisine-image" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=85" alt="Japanese-inspired dish">
+          <div class="journey-label"><span id="cuisine-label">01 / Japan</span><strong id="cuisine-title">Precision, restraint, depth.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-section" id="space">
+      <div class="space-image">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2200&q=85" alt="Cinematic restaurant dining room">
+        <div class="space-overlay"></div>
+        <div class="container space-copy reveal"><span class="eyebrow">The space</span><h2 class="display">Where the food<br>is only <em>part</em><br>of the experience.</h2></div>
+      </div>
+      <div class="container space-details">
+        <img class="detail-large reveal" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85" alt="Restaurant bar with warm lighting">
+        <div class="detail-copy reveal"><span class="eyebrow">A room with a rhythm</span><p>Low light, warm timber and a soundtrack that carries the evening forward. Come for dinner. Stay for another round.</p><a class="text-link" href="#contact">Find us <span>↗</span></a></div>
+        <img class="detail-small reveal" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85" alt="Close detail of restaurant seating">
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="container story-grid">
+        <div class="story-image reveal"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85" alt="Dish being served at a restaurant table"></div>
+        <div class="story-copy reveal"><span class="eyebrow">Our story</span><h2 class="editorial-title">A table for<br><em>curiosity.</em></h2><p class="lead">[ZUII STORY — REPLACE WITH FINAL BRAND COPY]</p><p>ZUII is a place for discovery: familiar ingredients in unexpected combinations, and hospitality that leaves room for you to make the evening your own.</p><a class="text-link" href="#contact">Read our story <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Kind words</span><h2 class="editorial-title">The table<br><em>speaks for itself.</em></h2></div>
+          <p class="section-note">Good food. Great company. Stories worth repeating.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <span class="testimonial-mark">“</span>
+            <blockquote>The flavours were bold without being overwhelming, and every course gave us something new to talk about.</blockquote>
+            <cite>— Maya R.</cite>
+          </article>
+          <article class="testimonial-card testimonial-feature reveal">
+            <span class="testimonial-mark">“</span>
+            <blockquote>From the warm welcome to the last cocktail, everything felt effortless. We came for dinner and stayed for the atmosphere.</blockquote>
+            <cite>— Daniel K.</cite>
+          </article>
+          <article class="testimonial-card reveal">
+            <span class="testimonial-mark">“</span>
+            <blockquote>Beautiful plates, thoughtful service and a room full of energy. ZUII is already our favourite place for a long evening.</blockquote>
+            <cite>— Priya S.</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reserve" id="reserve">
+      <div class="container reserve-inner reveal"><span class="eyebrow">Make an evening of it</span><h2 class="display">Your table<br><em>awaits.</em></h2><p>Join us for an evening of Pan-Asian flavours, crafted cocktails and unforgettable moments.</p><a class="button button-light" href="pages/reservations.html">Reserve a table <span>↗</span></a></div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="container"><div class="section-head reveal"><div><span class="eyebrow">In the moment</span><h2 class="editorial-title">A glimpse of ZUII</h2></div><a class="text-link" href="#contact">Follow along <span>↗</span></a></div>
+        <div class="gallery-grid">
+          <img class="gallery-a reveal" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85" alt="Cocktail at ZUII">
+          <img class="gallery-b reveal" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85" alt="ZUII dining atmosphere">
+          <img class="gallery-c reveal" src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1000&q=85" alt="Asian dishes prepared for sharing">
+          <img class="gallery-d reveal" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1000&q=85" alt="Chef preparing food">
+        </div>
+      </div>
+    </section>
+
+    <section class="location section" id="contact">
+      <div class="container location-grid">
+        <div class="reveal"><span class="eyebrow">Come find us</span><h2 class="editorial-title">Meet us<br><em>at the table.</em></h2></div>
+        <div class="location-details reveal"><h3>ZUII</h3><p>[Restaurant Address]<br>[City]</p><p>[Phone Number]<br>[Email Address]</p><h4>Opening hours</h4><p>[Days] · [Opening hours]</p><div class="location-actions"><a class="button" href="pages/reservations.html">Reserve a table</a><a class="text-link location-directions" href="https://maps.app.goo.gl/mu5NwskELouPbdp76" target="_blank" rel="noopener noreferrer">Get directions <span>↗</span></a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><a class="brand" href="#top">ZUII<span>—</span></a><div><span class="footer-label">Explore</span><a href="#experience">Experience</a><a href="#signatures">Menu</a><a href="#story">Our Story</a><a href="#contact">Contact</a></div><div><span class="footer-label">Stay connected</span><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Privacy</a></div></div><div class="container footer-bottom"><span>© ZUII. All rights reserved.</span><span>Pan-Asian restaurant</span></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ZUII — Menu</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <header class="site-header scrolled">
+    <a class="brand" href="../index.html">ZUII<span>—</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="../index.html#experience">Experience</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="../index.html#story">Our Story</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="button button-small header-cta" href="reservations.html">Reserve a table</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span></button>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="../index.html#experience">Experience</a>
+      <a href="menu.html">Menu</a>
+      <a href="../index.html#story">Our Story</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="button" href="reservations.html">Reserve a table</a>
+      <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span> <span class="theme-toggle-label">Light theme</span></button>
+    </nav>
+  </div>
+
+  <main class="page-banner menu-page">
+    <div class="container">
+      <span class="eyebrow">A first taste</span>
+      <h1>Menu</h1>
+      <p class="lead">A seasonal menu shaped by Asia, designed for the table.</p>
+      <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+        <button class="active" type="button" data-category="Small plates" role="tab" aria-selected="true">Small plates</button>
+        <button type="button" data-category="Robata" role="tab" aria-selected="false">Robata</button>
+        <button type="button" data-category="Wok & curry" role="tab" aria-selected="false">Wok &amp; curry</button>
+        <button type="button" data-category="Dessert" role="tab" aria-selected="false">Dessert</button>
+        <button type="button" data-category="Drinks" role="tab" aria-selected="false">Drinks</button>
+      </div>
+      <section class="menu-list" id="menu-list" aria-label="Small plates menu">
+      </section>
+      <p class="menu-note">[Menu categories, dishes, allergens and pricing will be replaced with final ZUII content.]</p>
+    </div>
+  </main>
+  <script src="../js/main.js?v=3"></script>
+  <script>
+    (() => {
+      const list = document.getElementById('menu-list');
+      const buttons = document.querySelectorAll('.menu-tabs [data-category]');
+      if (!list || !buttons.length) return;
+
+      const dishes = {
+        'Small plates': [
+          ['Charred edamame', 'Smoked salt, lime leaf, sesame.'],
+          ['Hand-folded dumplings', 'Seasonal filling, black vinegar, chilli crisp.'],
+          ['King oyster mushroom', 'Green curry, crispy shallot, Thai basil.'],
+          ['Seasonal sashimi', 'Market selection, ponzu, fresh wasabi.']
+        ],
+        Robata: [
+          ['Miso-glazed aubergine', 'Sesame, spring onion, toasted rice.'],
+          ['Charred chicken thigh', 'Yuzu kosho, shiso, smoked soy.'],
+          ['Robata prawns', 'Tamarind glaze, coriander, lime.'],
+          ['King oyster skewers', 'Burnt butter, chilli, crispy garlic.']
+        ],
+        'Wok & curry': [
+          ['Wok-tossed noodles', 'Citrus, greens, toasted sesame, chilli.'],
+          ['Thai green curry', 'Seasonal vegetables, coconut, Thai basil.'],
+          ['Black pepper beef', 'Onion, peppercorn, fermented soy.'],
+          ['Crispy rice bowl', 'Pickles, herbs, roasted mushrooms.']
+        ],
+        Dessert: [
+          ['Miso caramel cheesecake', 'Sesame brittle, black sugar.'],
+          ['Coconut pandan pudding', 'Mango, lime, toasted coconut.'],
+          ['Matcha chocolate fondant', 'Matcha cream, cacao nib.'],
+          ['Seasonal fruit', 'Coconut sorbet, ginger syrup.']
+        ],
+        Drinks: [
+          ['ZUII spritz', 'Citrus, jasmine, sparkling tea.'],
+          ['Lychee highball', 'Lychee, shiso, soda, vodka.'],
+          ['Ginger old fashioned', 'Bourbon, ginger, toasted spice.'],
+          ['Zero-proof umami tonic', 'Yuzu, herbs, tonic, sea salt.']
+        ]
+      };
+
+      function showCategory(category, activeButton) {
+        list.innerHTML = dishes[category].map(([name, description]) => `
+          <article class="menu-item">
+            <div><span>${category}</span><h2>${name}</h2><p>${description}</p></div>
+            <strong>[Price]</strong>
+          </article>
+        `).join('');
+        list.setAttribute('aria-label', `${category} menu`);
+        buttons.forEach((button) => {
+          const active = button === activeButton;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-selected', String(active));
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => showCategory(button.dataset.category, button));
+      });
+      showCategory('Small plates', buttons[0]);
+    })();
+  </script>
+</body>
+</html>

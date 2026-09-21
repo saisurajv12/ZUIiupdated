@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZUII — Reserve Your Table</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="reservation-page">
+  <header class="site-header scrolled">
+    <a class="brand" href="../index.html" aria-label="ZUII home">ZUII<span>—</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="../index.html#experience">Experience</a>
+      <a href="../pages/menu.html">Menu</a>
+      <a href="../index.html#story">Our Story</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="button button-small" href="../index.html">Back home</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span></button>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="../index.html#experience">Experience</a>
+      <a href="menu.html">Menu</a>
+      <a href="../index.html#story">Our Story</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="button" href="#reservation-form">Book now</a>
+      <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">☼</span> <span class="theme-toggle-label">Light theme</span></button>
+    </nav>
+  </div>
+
+  <main class="reservation-main">
+    <section class="reservation-hero">
+      <div class="container">
+        <span class="eyebrow">Your evening starts here</span>
+        <h1>Reserve Your Table</h1>
+        <p>Make your next gathering an unforgettable ZUII experience.</p>
+        <div class="reservation-highlights" aria-label="Reservation information">
+          <div><span aria-hidden="true">◷</span><small>Open daily</small><strong>12 PM – 11 PM</strong></div>
+          <div><span aria-hidden="true">♧</span><small>Party size</small><strong>Up to 50+</strong></div>
+          <div><span aria-hidden="true">◌</span><small>Experience</small><strong>Approx. 2 hours</strong></div>
+          <div><span aria-hidden="true">✦</span><small>Dining style</small><strong>Pan-Asian sharing</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation-form-section">
+      <div class="container reservation-form-wrap">
+        <div class="reservation-form-heading">
+          <div class="reservation-form-kicker"><span class="reservation-form-line"></span><span>Direct to ZUII</span><span class="reservation-form-line"></span></div>
+          <h2>Book your <em>experience.</em></h2>
+          <p>Choose your preferred time and let us take care of the rest.</p>
+          <div class="reservation-form-note"><span>✦</span> Your request goes straight to the ZUII restaurant team</div>
+        </div>
+        <form class="reservation-form" id="reservation-form">
+          <label><span>Full name</span><input name="name" type="text" placeholder="Your name" autocomplete="name" required></label>
+          <label><span>Email</span><input name="email" type="email" placeholder="you@email.com" autocomplete="email" required></label>
+          <label><span>Phone</span><input name="phone" type="tel" placeholder="Your phone number" autocomplete="tel" required></label>
+          <label><span>Party size</span><select name="guests" required><option value="">Select guests</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6+ guests</option></select></label>
+          <label><span>Date</span><div class="date-picker-control"><input name="date-display" id="reservation-date" type="text" placeholder="dd/mm/yyyy" inputmode="numeric" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/([0-9]{4})$" autocomplete="off" required><button class="calendar-button" id="calendar-button" type="button" aria-label="Open calendar">▣</button><input id="reservation-date-picker" class="native-date-picker" type="date" tabindex="-1" aria-hidden="true"><input name="date" id="reservation-date-value" type="hidden"></div></label>
+          <label><span>Time</span><select name="time" id="reservation-time" required><option value="">Select time</option><option value="12:00">12:00 PM</option><option value="12:30">12:30 PM</option><option value="13:00">1:00 PM</option><option value="13:30">1:30 PM</option><option value="14:00">2:00 PM</option><option value="14:30">2:30 PM</option><option value="15:00">3:00 PM</option><option value="15:30">3:30 PM</option><option value="16:00">4:00 PM</option><option value="16:30">4:30 PM</option><option value="17:00">5:00 PM</option><option value="17:30">5:30 PM</option><option value="18:00">6:00 PM</option><option value="18:30">6:30 PM</option><option value="19:00">7:00 PM</option><option value="19:30">7:30 PM</option><option value="20:00">8:00 PM</option><option value="20:30">8:30 PM</option><option value="21:00">9:00 PM</option><option value="21:30">9:30 PM</option><option value="22:00">10:00 PM</option><option value="22:30">10:30 PM</option><option value="23:00">11:00 PM</option></select></label>
+          <label class="full"><span>Special requests</span><textarea name="requests" rows="4" placeholder="Birthday celebration, window seat, dietary requirements..."></textarea></label>
+          <button class="button full" type="submit">Send reservation request <span>↗</span></button>
+          <p class="reservation-status full" id="reservation-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><span>© ZUII. All rights reserved.</span><span>Pan-Asian restaurant</span></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
