@@ -354,11 +354,13 @@ if (reservationForm) {
       datePicker.click();
     }
   });
-  datePicker.addEventListener('change', () => {
+  function syncNativeDate() {
     const [year, month, day] = datePicker.value.split('-');
     dateInput.value = datePicker.value ? `${day}/${month}/${year}` : '';
     updateAvailableTimes();
-  });
+  }
+  datePicker.addEventListener('change', syncNativeDate);
+  datePicker.addEventListener('input', syncNativeDate);
   updateAvailableTimes();
 
   reservationForm.addEventListener('submit', async (event) => {

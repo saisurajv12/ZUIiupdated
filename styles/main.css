@@ -1841,6 +1841,24 @@
     font-size: .86rem;
   }
 
+  .date-picker-control {
+    min-height: 54px;
+  }
+
+  .date-picker-control .native-date-picker {
+    inset: 0;
+    z-index: 2;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: .01;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .date-picker-control .calendar-button {
+    z-index: 3;
+  }
+
   .menu-tabs {
     margin-top: 2.5rem;
   }
