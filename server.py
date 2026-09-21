@@ -44,6 +44,10 @@ class ZuiRequestHandler(SimpleHTTPRequestHandler):
         self.wfile.write(response)
 
 
+# Deployment platforms can discover this top-level request handler automatically.
+handler = ZuiRequestHandler
+
+
 def validate_reservation(payload):
     required = ("date", "time", "guests", "name", "phone", "email")
     if not isinstance(payload, dict) or any(not str(payload.get(field, "")).strip() for field in required):
